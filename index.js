@@ -1,10 +1,12 @@
 const container = document.querySelector(".container");
 console.log(container);
+const rect = container.getBoundingClientRect();
+console.log(rect.width);
 
 function createBlocks(blockSize) {
   const block = document.createElement("div");
-  block.style.width = `${container.offsetWidth / blockSize}px`;
-  block.style.height = `${container.offsetHeight / blockSize}px`;
+  block.style.width = `${(rect.width - 4) / blockSize}px`;
+  block.style.height = `${(rect.height - 4) / blockSize}px`;
   container.append(block);
 }
 
@@ -15,4 +17,6 @@ function addBlocks(gridSize) {
   addBlockHover();
 }
 
-addBlocks(16);
+addBlocks(2);
+
+function addBlockHover() {}
